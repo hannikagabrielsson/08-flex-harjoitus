@@ -1,0 +1,132 @@
+/* Mobile first */
+html {
+font-size: 62,5%;
+}
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 1rem;
+    background-color: darkcyan;
+    padding: 1rem;
+}
+section {
+
+}
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.wrapper > * {
+    padding: 1rem;
+    flex-basis: 100%;
+    flex-grow: 1;
+}
+.header {
+    background-color: gold;
+}
+
+.main-nav {
+    background-color: antiquewhite;
+    padding: 0;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-direction: row; /* voi laittaa aina */
+    flex-wrap: nowrap; /* ei rivity */
+}
+.main-nav ul > * {
+    flex-grow: 1; /* lapsien suhde, yhtä leveitä, jos on sama luku kaikissa */
+    flex-basis: 0; /* lapsen minimileveys. rinnakkain, jos on 0, tai allekkain 100% */
+    text-align: center;
+    border: solid black 1px;
+    padding: 0.5rem;
+}
+.main {
+    background-color: darkorange;
+}
+.icon-nav {
+    margin: 1rem -1rem -1rem -1rem;
+}
+.icon-nav .icon {
+    width: 3.2rem;
+    display: inline-block;
+}
+.icon-nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.icon-nav ul > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    text-align: center;
+}
+.aside-1 {
+    background-color: mediumseagreen;
+}
+.aside-2 {
+    background-color: seagreen;
+}
+figure .icon {
+    margin: 1rem -1rem -1rem -1rem;
+}
+.icon-nav .facebook {
+    padding: 1rem;
+    background-color: #4867AA;
+    fill: white;
+}
+.icon-nav .twitter {
+    padding: 1rem;
+    background-color: #1DA1F1;
+    fill: white;
+}
+.icon-nav .email {
+    padding: 1rem;
+    background-color: #767677;
+    fill: white;
+}
+footer {
+    background-color: lightgreen;
+}
+
+/* tablet-näkymä */
+
+@media only screen and (min-width: 426px) {
+    .wrapper {
+        flex-direction: row;
+    }
+    .aside-1 {
+        flex-basis: auto;
+    }
+    .aside-2 {
+        flex-basis: auto;
+    }
+    .footer {
+    }
+  }
+
+  /* desktop-näkymä */
+
+  @media only screen and (min-width: 769px) {
+        .aside-1 {
+            flex-basis: 0;
+            order: 1;
+        }
+        .main-nav {
+
+        }
+        .main {
+            flex-basis: 40rem;
+            order: 2;
+        }
+        .aside-2 {
+            flex-basis: 0;
+            order: 3;
+        }
+        .icon-nav {
+            order: 4;
+        }
+        .footer {
+            order: 5;
+        }
+    }
